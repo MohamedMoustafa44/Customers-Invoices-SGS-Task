@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving Invoices Task</title>
+    <link rel="stylesheet" href="./Style/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Invoices</h1>
+
+        <form>
+            <label for="invNum">Invoice Number</label>
+            <input type="number" name="invNum" required>
+
+            <label for="invDate">Invoice Date</label>
+            <input type="date" name="invDate" required>
+
+            <label for="customerName">Customer Name</label>
+            <input type="text" name="customerName" required>
+
+            <label for="payMethod">Payment Method</label>
+            <div class="radio-group">
+                <input type="radio" name="payMethod" id="cash" value="1" required>
+                <label for="cash">Cash</label>
+
+                <input type="radio" name="payMethod" id="credit" value="" required>
+                <label for="credit">Credit</label>
+            </div>
+
+            <label for="Dscrpt">Description</label>
+            <textarea name="Dscrpt" cols="50" rows="5" required></textarea>
+        </form>
+
+        <h2>Add Product Details</h2>
+        <br>
+        <button class="add-product-button">Add Row</button>
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="itemCode" required></td>
+                    <td><input type="text" name="itemName" required></td>
+                    <td><input type="number" name="qty" required></td>
+                    <td><input type="number" name="price" required></td>
+                    <td><input type="number" name="total" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <label for="totalCost">Total Cost</label>
+        <input type="number" name="totalCost" readonly>
+        <button class="submit-button">Submit</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/ConsumingApi.js"></script>
+</body>
+</html>
